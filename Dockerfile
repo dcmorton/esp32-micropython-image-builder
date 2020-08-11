@@ -1,5 +1,5 @@
 FROM ubuntu:18.04
-LABEL Name=esp32-dht22-upython-builder Version=0.0.1
+LABEL Name=esp32-micropython-image-builder Version=0.0.1
 ENV ESPIDF /data/esp-idf
 ENV MICROPYTHON /data/micropython
 
