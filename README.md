@@ -1,7 +1,7 @@
 # esp32-micropython-image-builder
 Build ESP32 Micropython images with your custom code included
 
-## Example
+## Example Code
 - Create a `Dockerfile` alongside your code to copy your file(s) into the image:
 
 ```
@@ -25,3 +25,6 @@ docker run -v $PWD/output:/data/micropython/ports/esp32/build-GENERIC/ esp32-ima
 ```
 
 - The firmware file will be in `$PWD/output/firmware.bin`.
+
+## More Examples
+The [esp32-dht22-upython](https://github.com/dcmorton/esp32-dht22-upython) project uses a similar [Dockerfile](https://github.com/dcmorton/esp32-dht22-upython/blob/master/Dockerfile) and [GitHub Action](https://github.com/dcmorton/esp32-dht22-upython/blob/master/.github/workflows/build.yml) to build a firmware image and upload the image to AWS S3.
