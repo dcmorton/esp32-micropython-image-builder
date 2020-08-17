@@ -7,7 +7,7 @@ RUN apt update && apt -y install git build-essential python-virtualenv gcc git w
 
 RUN mkdir -p ${ESPIDF} && mkdir -p ${MICROPYTHON}
 
-RUN git clone -b v1.12 https://github.com/micropython/micropython.git ${MICROPYTHON} && wget --quiet -O ${MICROPYTHON}/ports/esp32/modules/urequests.py https://raw.githubusercontent.com/micropython/micropython-lib/master/urequests/urequests.py
+RUN git clone https://github.com/micropython/micropython.git ${MICROPYTHON} && wget --quiet -O ${MICROPYTHON}/ports/esp32/modules/urequests.py https://raw.githubusercontent.com/micropython/micropython-lib/master/urequests/urequests.py
 
 RUN git clone https://github.com/espressif/esp-idf.git ${ESPIDF} && cd ${ESPIDF} && git checkout $(grep 'ESPIDF_SUPHASH_V3 :=' ${MICROPYTHON}/ports/esp32/Makefile | awk '{print $3}') && git submodule update --init --recursive
 
