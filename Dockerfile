@@ -19,3 +19,4 @@ RUN cd ${MICROPYTHON}/mpy-cross && make mpy-cross
 
 RUN cd ${MICROPYTHON}/ports/esp32 && make submodules
 
+RUN cd ${MICROPYTHON}/ports/esp32 && make PYTHON=python2
